@@ -1,12 +1,19 @@
-package com.app.iotdevicemonitoring
+package com.app.iotdevicemonitoring.presentation
 
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.app.iotdevicemonitoring.R
+import com.app.iotdevicemonitoring.data.models.ToggleRequest
 import com.app.iotdevicemonitoring.databinding.ActivityMainBinding
+import com.app.iotdevicemonitoring.network.RetrofitInstance
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
@@ -18,11 +25,24 @@ class MainActivity : AppCompatActivity() {
     private var isLight2On = false
     private var isLight3On = false
     private var isLight4On = false
-
+    private lateinit var viewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        GlobalScope.launch(Dispatchers.IO) {
+            val response = RetrofitInstance.api.toggleDevice(ToggleRequest("den1", 1))
+            if (response.success) {
+                Log.d("API", "Device ${response.device} turned on")
+            }
+        }
+
+        // Lấy trạng thái thiết bị
+        GlobalScope.launch(Dispatchers.IO) {
+            val status = RetrofitInstance.api.getStatus()
+            Log.d("API", "Nhiệt độ: ${status.nhietDo}, Độ ẩm: ${status.doAm}")
+        }
 
         // Handle switch actions using ImageView
         binding.switchDen1.setOnClickListener {
@@ -75,9 +95,12 @@ class MainActivity : AppCompatActivity() {
 
                                 // Cập nhật văn bản trong switchDen4
                                 binding.switchDen4.text = timeRemaining
+                                binding.imgLight4.setImageResource(R.drawable.ic_light_on)
                             }
 
                             override fun onFinish() {
+                                binding.imgLight4.setImageResource(R.drawable.ic_light_off)
+
                                 // Hành động khi hết giờ
                                 binding.switchDen4.text = "Hết giờ"
                                 Toast.makeText(this@MainActivity, "Thời gian đã hết!", Toast.LENGTH_SHORT).show()
