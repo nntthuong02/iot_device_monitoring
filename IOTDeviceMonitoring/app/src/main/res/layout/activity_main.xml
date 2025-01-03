@@ -1,0 +1,245 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".presentation.MainActivity">
+
+    <!-- Row for temperature and humidity -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/ic_temperature"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25 °C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <!-- Row for lights -->
+    <ImageView
+        android:id="@+id/img_light1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_light_off"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/img_light2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_light_off"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/img_light1"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/img_light3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_light_off"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/img_light2"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/img_light4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_light_on"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/img_light3"
+        app:layout_constraintWidth_percent="0.2" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="80 %"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐÈN SÂN"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/img_light1" />
+
+
+    <ImageView
+        android:id="@+id/switch_den1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_switch_off"
+        android:text="ĐÈN 1"
+        app:layout_constraintDimensionRatio="114:84"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tv_light2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐÈN 1"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/img_light2" />
+
+    <ImageView
+        android:id="@+id/switch_den2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_switch_off"
+        android:text="ĐÈN 2"
+        app:layout_constraintDimensionRatio="114:84"
+        app:layout_constraintEnd_toEndOf="@id/switch_den1"
+        app:layout_constraintStart_toStartOf="@id/switch_den1"
+        app:layout_constraintTop_toBottomOf="@id/tv_light2"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tv_light3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐÈN 2"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/img_light3" />
+
+    <ImageView
+        android:id="@+id/switch_den3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_switch_off"
+        android:text="ĐÈN 3"
+        app:layout_constraintDimensionRatio="114:84"
+        app:layout_constraintEnd_toEndOf="@id/switch_den2"
+        app:layout_constraintStart_toStartOf="@id/switch_den2"
+        app:layout_constraintTop_toBottomOf="@id/tv_light3"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tv_light4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐÈN 3"
+        app:layout_constraintEnd_toEndOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/img_light4" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/switch_den4"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintDimensionRatio="114:84"-->
+    <!--        app:layout_constraintWidth_percent="0.2"-->
+    <!--        android:src="@drawable/ic_switch_on"-->
+    <!--        android:text="ĐÈN 3"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_light4"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/switch_den3"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/switch_den3"/>-->
+
+
+    <!-- Timer button -->
+    <TextView
+        android:id="@+id/switch_den4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        android:padding="10dp"
+        android:text="Hẹn giờ tắt"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@id/switch_den3"
+        app:layout_constraintStart_toStartOf="@id/switch_den3"
+        app:layout_constraintTop_toBottomOf="@id/tv_light4" />
+
+    <!-- Control buttons -->
+    <TextView
+        android:id="@+id/btn_turn_on_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="Bật tất cả đèn"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_light4" />
+
+    <TextView
+        android:id="@+id/btn_turn_off_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="Tắt tất cả đèn"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_turn_on_all" />
+
+    <TextView
+        android:id="@+id/tv_light_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:text="Đèn 3 đang Bật"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_turn_off_all" />
+</androidx.constraintlayout.widget.ConstraintLayout>
