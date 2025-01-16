@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /> <!-- Bên trong hình tròn -->
+    <stroke
+        android:width="5dp"
+    android:color="#2B71DC" />
+    <corners android:radius="50dp" />
+</shape>

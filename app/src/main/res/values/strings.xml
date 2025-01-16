@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">IOT Device Monitoring</string>
+    <string name="tv_den">Đèn</string>
+    <string name="my_gardens">My Gardens</string>
+    <string name="_25_c">25 °C</string>
+    <string name="_80">80 %</string>
 </resources>
